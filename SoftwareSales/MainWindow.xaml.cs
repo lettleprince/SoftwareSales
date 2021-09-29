@@ -80,7 +80,7 @@ namespace SoftwareSales
             }
             else
             {
-                numberString = number.ToString();
+                numberString = $"{number}";
             }
 
             QuantityInput.Text = numberString;
