@@ -1,0 +1,197 @@
+﻿<Window x:Class="SoftwareSales.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SoftwareSales"
+        mc:Ignorable="d"
+        Title="SoftwareSales" Height="1000" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="PageTitle" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#9fa0a0"></Setter>
+            <Setter Property="Margin" Value="30, 15, 30, 5"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+        </Style>
+        
+        <Style x:Key="ProductTitle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="#0f1111"></Setter>
+            <Setter Property="Margin" Value="30, 15, 30, 5"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="Rating" TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="30, 0"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="#017185"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="ProductImage" TargetType="{x:Type Image}">
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="Stretch" Value="Uniform"/>
+        </Style>
+        
+        <Style x:Key="Feature" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#0f1111"></Setter>
+            <Setter Property="Margin" Value="30, 0, 0, 0"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="FeatureTitle" TargetType="{x:Type Label}" BasedOn="{StaticResource Feature}">
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style TargetType="{x:Type Separator}">
+            <Setter Property="Margin" Value="30, 10"/>
+            <Setter Property="Height" Value="0.5"></Setter>
+        </Style>
+        
+        <Style x:Key="PriceTitle" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#565959"></Setter>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="Price" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#b22705"></Setter>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="QuantityTip" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#0f1111"></Setter>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+
+        <ControlTemplate x:Key="Border" TargetType="{x:Type TextBox}">
+            <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="8">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+        </ControlTemplate>
+
+        <Style x:Key="QuantityBorder" TargetType="{x:Type Border}">
+            <Setter Property="Margin" Value="25, 2"/>
+            <Setter Property="BorderBrush" Value="LightGray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+        <Style x:Key="QuantityInput" TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="#0f1111"></Setter>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="2.2*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+               Content="Sports/Outdoors > Exercise/Fitness > Yoga > Mats" 
+               Style="{StaticResource PageTitle}"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                   Style="{StaticResource ProductTitle}">
+                1/2-Inch Extra Thick High Density Anti-Tear Exercise Yoga Mat with Carrying Strap
+        </TextBlock>
+
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+               Content="4.2 out of 5 (66,526 ratings)" 
+               Style="{StaticResource Rating}"/>
+
+        <Image Source="Images/Yogamat.jpg" 
+               Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+               Style="{StaticResource ProductImage}">
+        </Image>
+
+        <Label Grid.Row="4" Grid.Column="0"
+               Content="Colour" 
+               Style="{StaticResource FeatureTitle}"/>
+        <Label Grid.Row="4" Grid.Column="1"
+               Content="Black" 
+               Style="{StaticResource Feature}"/>
+
+        <Label Grid.Row="5" Grid.Column="0"
+               Content="Material" 
+               Style="{StaticResource FeatureTitle}"/>
+        <Label Grid.Row="5" Grid.Column="1"
+               Content="Foam" 
+               Style="{StaticResource Feature}"/>
+
+        <Label Grid.Row="6" Grid.Column="0"
+               Content="Care instructions" 
+               Style="{StaticResource FeatureTitle}"/>
+        <Label Grid.Row="6" Grid.Column="1"
+               Content="Hand Wash Only" 
+               Style="{StaticResource Feature}"/>
+
+        <Label Grid.Row="7" Grid.Column="0"
+               Content="Item weight" 
+               Style="{StaticResource FeatureTitle}"/>
+        <Label Grid.Row="7" Grid.Column="1"
+               Content="1.8 Pounds" 
+               Style="{StaticResource Feature}"/>
+
+        <Separator Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3"></Separator>
+
+        <Grid Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Row="0" Grid.Column="0"
+               Content="Price:" 
+               Style="{StaticResource PriceTitle}"/>
+            <Label Grid.Row="0" Grid.Column="1"
+               Content="$24.99" 
+               Style="{StaticResource Price}"/>
+
+            <Label Grid.Row="1" Grid.Column="0"
+               Content="Quantity:" 
+               Style="{StaticResource QuantityTip}"/>
+            <Border Grid.Row="1" Grid.Column="1" 
+                    Style="{StaticResource QuantityBorder}">
+                <TextBox Style="{StaticResource QuantityInput}">
+                </TextBox>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>
