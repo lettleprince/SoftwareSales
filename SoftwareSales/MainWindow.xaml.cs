@@ -1,10 +1,7 @@
 ﻿// Group2: Jingfei Yao, Grace Pauly, Xiaotong Han.
 
-using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Input;
 using System.Windows.Controls;
-using System;
 
 /*
  * Group 2/10 Problem – Software Sales
