@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\YogaMat.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
