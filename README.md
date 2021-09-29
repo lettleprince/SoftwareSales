@@ -1,7 +1,7 @@
 # SoftwareSales
-Assignment 2 of PROG8010
+Assignment 3 of PROG8010
 
-Group 2/9 Problem – Software Sales
+Group 2/10 Problem – Software Sales
 
 A software company sells a package that retails for $99. Quantity discounts are given according to the following table:
 
